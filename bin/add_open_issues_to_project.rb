@@ -14,10 +14,7 @@ params = {
   github_token: ENV.fetch("GITHUB_TOKEN")
 }
 
-IssueLister.new(params).open_issues.each do |hash|
-  issue_id = hash.dig("node", "id")
-  pp Issue.new(
-    id: issue_id,
-    github_token: ENV.fetch("GITHUB_TOKEN")
-  ).add_to_project_column(ICEBOX_COLUMN_ID)
+
+IssueLister.new(params).open_issues.each do |issue|
+  pp issue.add_to_project_column(ICEBOX_COLUMN_ID)
 end

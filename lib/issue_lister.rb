@@ -26,7 +26,7 @@ class IssueLister < GithubGraphQlClient
       end_cursor = data.dig("issues", "pageInfo", "endCursor")
     end
 
-    issues
+    issues.map { |issue| Issue.new(id: issue.dig("node", "id"), github_token: github_token) }
   end
 
   # private
