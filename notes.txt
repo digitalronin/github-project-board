@@ -1,0 +1,5 @@
+# TODO
+
+* Get list of all project cards (which are issues)
+* Add all open issues *which are not already added*
+
