@@ -15,6 +15,19 @@ class Issue < GithubGraphQlClient
     JSON.parse(json)
   end
 
+  # Define ==, eql? & hash so we can subtract one list of Issues from another
+  def ==(issue)
+    eql?(issue)
+  end
+
+  def eql?(issue)
+    id == issue.id
+  end
+
+  def hash
+    id
+  end
+
   private
 
   def add_issue_query(column_id)
