@@ -1,4 +1,4 @@
-class IssueLister < GithubGraphQlClient
+class RepoIssueLister < GithubGraphQlClient
   attr_reader :organization, :repo
 
   PAGE_SIZE = 100

@@ -15,6 +15,6 @@ params = {
 }
 
 
-IssueLister.new(params).open_issues.each do |issue|
+RepoIssueLister.new(params).open_issues.each do |issue|
   pp issue.add_to_project_column(ICEBOX_COLUMN_ID)
 end
